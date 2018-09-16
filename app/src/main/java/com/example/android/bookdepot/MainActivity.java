@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void insertBook() {
-        // Gets the database in write mode
+        // Gets the database in write mode.
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         // Create a ContentValues object where names are the keys and book attributes are the values.
@@ -146,24 +146,21 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // inflate the menu options from the res/menu/menu_catalog.xml file.
-        // this adds menu items to the app bar.
+        // Inflate menu options menu_main.xml to add menu items to app bar.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // user clicked on a menu option in the app bar overflow menu
+        // User clicked on a menu option in the app bar.
         switch (item.getItemId()) {
-            // respond to a click on the "Insert dummy data" menu option
-            case R.id.action_insert_dummy_data:
+            case R.id.action_insert_book_data: //Respond to click on "Insert Book Data."
                 insertBook();
                 displayDatabaseInfo();
                 return true;
-            // respond to a click on the "Delete all entries" menu option
-            case R.id.action_delete_all_entries:
-                // do nothing for now
+            case R.id.action_delete_all_entries: // Respond to a click on "Delete All Entries."
+                // Do nothing for now.
                 return true;
         }
         return super.onOptionsItemSelected(item);
