@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 null,
                 null,
+                null,
                 null);
 
         TextView displayView = (TextView) findViewById(R.id.text_view_book);
