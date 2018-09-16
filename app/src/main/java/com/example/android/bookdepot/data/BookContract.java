@@ -1,7 +1,8 @@
 package com.example.android.bookdepot.data;
 
-
 import android.provider.BaseColumns;
+
+// Credit: Starter code from Udacity ABND Pets App
 
 public final class BookContract {
 
@@ -10,7 +11,6 @@ public final class BookContract {
     public static final class BookEntry implements BaseColumns {
 
         public static final String TABLE_NAME = "books";
-
         public static final String _ID = BaseColumns._ID;
         public static final String COLUMN_BOOK_TITLE = "title";
         public static final String COLUMN_BOOK_PRICE = "price";

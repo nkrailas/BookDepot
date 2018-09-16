@@ -13,9 +13,9 @@ import android.widget.Toast;
 import com.example.android.bookdepot.data.BookContract.BookEntry;
 import com.example.android.bookdepot.data.BookDbHelper;
 
-/**
- * Allows user to create a new entry or edit an existing one.
- */
+// Credit: Starter code from Udacity ABND Pets App
+
+// User can create a new entry or edit an existing one.
 public class EditorActivity extends AppCompatActivity {
 
     // EditText for book title.
@@ -62,8 +62,7 @@ public class EditorActivity extends AppCompatActivity {
         // Gets the data in write mode.
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        // Create ContentValues object where column names are keys
-        // and attributes from editor are values.
+        // Create ContentValues object; column names are key and attributes from editor are values.
         ContentValues values = new ContentValues();
         values.put(BookEntry.COLUMN_BOOK_TITLE, title);
         values.put(BookEntry.COLUMN_BOOK_PRICE, price);
@@ -78,7 +77,7 @@ public class EditorActivity extends AppCompatActivity {
         if (newRowId == -1) {
             Toast.makeText(this, "Error saving book", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Book saved (row id): " + newRowId, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Book saved in row: " + newRowId, Toast.LENGTH_SHORT).show();
         }
 
     }

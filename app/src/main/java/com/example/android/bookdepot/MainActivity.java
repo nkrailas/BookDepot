@@ -13,9 +13,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-
 import com.example.android.bookdepot.data.BookContract.BookEntry;
 import com.example.android.bookdepot.data.BookDbHelper;
+
+// Credit: Starter code from Udacity ABND Pets App
 
 // Displays list of books that were entered and stored in the app.
 
@@ -155,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // User clicked on a menu option in the app bar.
         switch (item.getItemId()) {
-            case R.id.action_insert_book_data: //Respond to click on "Insert Book Data."
+            case R.id.action_insert_dummy_data: // Respond to click on "Insert Dummy Data."
                 insertBook();
                 displayDatabaseInfo();
                 return true;

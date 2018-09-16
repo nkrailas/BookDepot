@@ -6,10 +6,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.android.bookdepot.data.BookContract.BookEntry;
 
-/**
- * Database helper manages database creation and version management.
- */
+// Credit: Starter code from Udacity ABND Pets App
 
+// Database helper manages database creation and version management.
 public class BookDbHelper extends SQLiteOpenHelper {
 
     public static final String LOG_TAG = BookDbHelper.class.getSimpleName();
@@ -42,7 +41,6 @@ public class BookDbHelper extends SQLiteOpenHelper {
     }
 
     //This is called when the database needs to be upgraded.
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { }
 

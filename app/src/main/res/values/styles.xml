@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!-- Style for heading in the editor -->
+    <!-- Style for Heading in the editor ~ Credit: Starter code from Udacity ABND Pets App -->
     <style name="HeadingStyle">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">0dp</item>
@@ -19,7 +19,7 @@
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
     </style>
 
-    <!-- Style for an EditText field in the editor -->
+    <!-- Style for an EditText in the editor ~ Credit: Starter code from Udacity ABND Pets App -->
     <style name="EditTextStyle">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>

@@ -3,7 +3,7 @@
 
     <!-- MainActivity -->
     <!-- Labels for overflow menu options in app bar [CHAR LIMIT=20] -->
-    <string name="action_insert_book_data">Insert Dummy Data</string>
+    <string name="action_insert_dummy_data">Insert Dummy Data</string>
     <string name="action_delete_all_entries">Delete All Entries</string>
 
     <!-- EditorActivity -->
