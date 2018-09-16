@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Book Depot</string>
+    <string name="title">Title</string>
+    <string name="price">Price</string>
+    <string name="quantity">Quantity</string>
+    <string name="supplier">Supplier</string>
+    <string name="supplier_name">Name</string>
+    <string name="supplier_phone">Phone</string>
+
+    <!-- Labels for overflow menu option [CHAR LIMIT=20] -->
+    <string name="action_insert_book">Insert Book Data</string>
+    <string name="action_delete_entries">Delete All Entries</string>
+
+    <!-- Title for the activity to add a new book [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_new_book">Add a Book</string>
+
+    <!-- Label for editor menu option to save book and leave editor [CHAR LIMIT=20] -->
+    <string name="action_save">Save</string>
+
+    <!-- Label for editor menu option to delete the current book [CHAR LIMIT=20] -->
+    <string name="action_delete_all">Delete</string>
+
+
+    <!-- Labels for categories and hits of attributes in the editor [CHAR LIMIT=30] -->
+    <string name="category_book">Book</string>
+    <string name="hint_book_title">Title</string>
+
+    <string name="category_price">Price</string>
+    <string name="hint_book_price">Price</string>
+    <string name="unit_book_price">$</string>
+
+    <string name="category_supplier">Supplier</string>
+    <string name="hint_supplier_name">Name</string>
+    <string name="hint_supplier_phone">Phone Number</string>
+    <string name="editor_activity_title_add_book">Add a Book</string>
+
+</resources>
