@@ -6,6 +6,7 @@ import android.provider.BaseColumns;
 
 public final class BookContract {
 
+    //An empty private constructor makes sure that the class is not going to be initialized.
     private BookContract() {}
 
     public static final class BookEntry implements BaseColumns {
