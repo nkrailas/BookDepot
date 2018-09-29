@@ -31,10 +31,10 @@ public class BookDbHelper extends SQLiteOpenHelper {
         String SQL_CREATE_BOOKS_TABLE = "CREATE TABLE " + BookEntry.TABLE_NAME + " ("
                 + BookEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + BookEntry.COLUMN_BOOK_TITLE + " TEXT NOT NULL, "
-                + BookEntry.COLUMN_BOOK_PRICE + " INTEGER NOT NULL, "
+                + BookEntry.COLUMN_BOOK_PRICE + " TEXT, "
                 + BookEntry.COLUMN_BOOK_QUANTITY + " INTEGER NOT NULL DEFAULT 0, "
                 + BookEntry.COLUMN_BOOK_SUPPLIER_NAME + " TEXT NOT NULL, "
-                + BookEntry.COLUMN_BOOK_SUPPLIER_PHONE + " TEXT NOT NULL);";
+                + BookEntry.COLUMN_BOOK_SUPPLIER_PHONE + " TEXT);";
 
         // Execute the SQL statement
         db.execSQL(SQL_CREATE_BOOKS_TABLE);

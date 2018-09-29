@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.example.android.bookdepot.data.BookContract.BookEntry;
 import com.example.android.bookdepot.data.BookDbHelper;
 
-// Credit: Starter code from Udacity ABND Pets App
+// Credit: Starter code from Udacity ABND Pets App.
 
 // User can create a new entry or edit an existing one.
 public class EditorActivity extends AppCompatActivity {
