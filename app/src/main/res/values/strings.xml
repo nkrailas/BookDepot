@@ -2,27 +2,63 @@
     <string name="app_name">Book Depot</string>
 
     <!-- MainActivity -->
+    <!-- Labels for empty view -->
+    <string name="empty_view_title_text">Grab a book, any book ...</string>
+    <string name="empty_view_subtitle_text">Check out what\'s on our shelves</string>
+
     <!-- Labels for overflow menu options in app bar [CHAR LIMIT=20] -->
     <string name="action_insert_dummy_data">Insert Dummy Data</string>
     <string name="action_delete_all_entries">Delete All Entries</string>
 
     <!-- EditorActivity -->
-    <!-- Title for activity page [CHAR LIMIT=20] -->
-    <string name="editor_activity_title_add_book">Add a Book</string>
 
     <!-- Labels for menu options to save or delete book [CHAR LIMIT=20] -->
     <string name="action_save">Save</string>
     <string name="action_delete">Delete</string>
 
     <!-- Labels for headings and hints of attributes to type in EditText fields [CHAR LIMIT=30] -->
-    <string name="heading_book">Book</string>
+    <string name="heading_book">Title</string>
     <string name="hint_book_title">Title</string>
-    <string name="heading_price">Price ($)</string>
+    <string name="heading_price">Price</string>
     <string name="hint_book_price">USD</string>
     <string name="heading_quantity">Quantity</string>
     <string name="hint_quantity">Number in Stock</string>
-    <string name="heading_supplier">Supplier</string>
+    <string name="heading_supplier">Supplier Name</string>
     <string name="hint_supplier_name">Company Name</string>
     <string name="hint_supplier_phone">Phone Number</string>
+
+    <!-- Title for activity page [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_add_book">Add a Book</string>
+    <string name="editor_activity_title_edit_book">Edit a Book</string>
+
+    <!-- Toast messages for inserting EditText fields [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_book_successful">Book saved</string>
+    <string name="editor_insert_book_failed">Error with saving book</string>
+
+    <!-- Toast messages for updating EditText fields [CHAR LIMIT=NONE] -->
+    <string name="editor_update_book_successful">Book updated</string>
+    <string name="editor_update_book_failed">Error with updating book</string>
+
+    <!-- Toast messages for deleting current book [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_book_successful">Book deleted</string>
+    <string name="editor_delete_book_failed">Error with deleting book</string>
+
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+
+    <!-- Dialog button text for the option to keep editing the current book [CHAR LIMIT=20] -->
+    <string name="keep_editing">Keep Editing</string>
+
+    <!-- Dialog message to ask the user to confirm deleting the current book [CHAR LIMIT=NONE] -->
+    <string name="delete_dialog_msg">Delete this book?</string>
+
+    <!-- Dialog button text for the option to confirm deleting the current book [CHAR LIMIT=20] -->
+    <string name="delete">Delete</string>
+
+    <!-- Dialog button text for the option to cancel deletion of the current book [CHAR LIMIT=20] -->
+    <string name="cancel">Cancel</string>
+
+    <!-- Dialog button text for the option to discard a user's changes [CHAR LIMIT=20] -->
+    <string name="discard">Discard</string>
 
 </resources>
