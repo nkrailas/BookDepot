@@ -189,8 +189,8 @@ public class EditorActivity extends AppCompatActivity implements
         values.put(BookEntry.COLUMN_BOOK_SUPPLIER_NAME, supplierNameString);
         values.put(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE, supplierPhoneString);
 
-        // For price, include default value of 0.00.
-        double priceDefault = 0.00;
+        // For price, include default value.
+        String priceDefault = "0.00";
         if (!TextUtils.isEmpty(priceString)) {
             values.put(BookEntry.COLUMN_BOOK_PRICE, priceString);
         } else {

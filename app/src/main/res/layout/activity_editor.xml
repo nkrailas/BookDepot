@@ -60,13 +60,6 @@
             android:layout_weight="2"
             android:paddingLeft="4dp">
 
-            <!-- Units for dollars ($) -->
-            <TextView
-                android:id="@+id/label_dollar_units"
-                style="@style/EditorUnitsStyle"
-                android:text="$"
-                android:textAppearance="?android:textAppearanceMedium" />
-
             <!-- Price Field -->
             <EditText
                 android:id="@+id/edit_book_price"
