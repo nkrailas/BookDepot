@@ -19,12 +19,14 @@
     <!-- Labels for headings and hints of attributes to type in EditText fields [CHAR LIMIT=30] -->
     <string name="heading_book">Title</string>
     <string name="hint_book_title">Title</string>
-    <string name="heading_price">Price</string>
+    <string name="heading_price">Price ($)</string>
     <string name="hint_book_price">USD</string>
     <string name="heading_quantity">Quantity</string>
-    <string name="hint_quantity">Number in Stock</string>
-    <string name="heading_supplier">Supplier Name</string>
-    <string name="hint_supplier_name">Company Name</string>
+    <string name="minus_sign">-</string>
+    <string name="plus_sign">+</string>
+    <string name="heading_supplier_name">Supplier </string>
+    <string name="hint_supplier_name">Name</string>
+    <string name="heading_phone_call_button">CALL</string>
     <string name="hint_supplier_phone">Phone Number</string>
 
     <!-- Title for activity page [CHAR LIMIT=20] -->
@@ -60,5 +62,8 @@
 
     <!-- Dialog button text for the option to discard a user's changes [CHAR LIMIT=20] -->
     <string name="discard">Discard</string>
+    <string name="sell_book">SELL BOOK</string>
 
+    <string name="suggested_price_label">Suggested Price: $</string>
+    <string name="quantity_label">In Stock: </string>
 </resources>

@@ -54,21 +54,26 @@
             android:text="@string/heading_price" />
 
         <!-- Input fields -->
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:orientation="vertical"
             android:paddingLeft="4dp">
+
+            <!-- Units for dollars ($) -->
+            <TextView
+                android:id="@+id/label_dollar_units"
+                style="@style/EditorUnitsStyle"
+                android:text="$"
+                android:textAppearance="?android:textAppearanceMedium" />
 
             <!-- Price Field -->
             <EditText
                 android:id="@+id/edit_book_price"
                 style="@style/EditTextStyle"
-                android:hint="@string/hint_book_price"
-                android:inputType="textCapWords" />
+                android:inputType="numberDecimal" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </LinearLayout>
 
@@ -88,21 +93,40 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingLeft="4dp">
 
             <!-- Quantity Field -->
+            <Button
+                android:id="@+id/decrease_quantity"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="@string/minus_sign"
+                android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/edit_book_quantity"
-                android:inputType="textCapWords"
-                style="@style/EditTextStyle"
-                android:hint="@string/hint_quantity" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:freezesText="true"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/increase_quantity"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="@string/plus_sign"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <!-- Supplier Heading -->
+    <!-- Supplier Name Heading -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -111,7 +135,7 @@
         <!-- Label -->
         <TextView
             style="@style/HeadingStyle"
-            android:text="@string/heading_supplier" />
+            android:text="@string/heading_supplier_name" />
 
         <!-- Input fields -->
         <LinearLayout
@@ -128,11 +152,37 @@
                 android:hint="@string/hint_supplier_name"
                 android:inputType="textCapWords" />
 
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Supplier Phone Heading -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/ic_phone" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
             <!-- Supplier Phone-->
             <EditText
                 android:id="@+id/edit_supplier_phone"
                 style="@style/EditTextStyle"
                 android:hint="@string/hint_supplier_phone"
+                android:autoLink="phone"
                 android:inputType="phone" />
 
         </LinearLayout>

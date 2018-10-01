@@ -91,8 +91,8 @@ public class MainActivity extends AppCompatActivity implements
     private void insertBook() {
         // Create ContentValues object where column names are keys and book attributes are values.
         ContentValues values = new ContentValues();
-        values.put(BookEntry.COLUMN_BOOK_TITLE, "Charlotte's Web");
-        values.put(BookEntry.COLUMN_BOOK_PRICE, "$7.99");
+        values.put(BookEntry.COLUMN_BOOK_TITLE, "The Alchemist");
+        values.put(BookEntry.COLUMN_BOOK_PRICE, "9.50");
         values.put(BookEntry.COLUMN_BOOK_QUANTITY, 16);
         values.put(BookEntry.COLUMN_BOOK_SUPPLIER_NAME, "Powell's City of Books");
         values.put(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE, "800-878-7323");

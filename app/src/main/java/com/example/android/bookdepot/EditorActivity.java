@@ -1,5 +1,6 @@
 package com.example.android.bookdepot;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.LoaderManager;
 import android.content.ContentValues;
@@ -10,6 +11,7 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -17,10 +19,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.android.bookdepot.data.BookContract.BookEntry;
+
+import org.w3c.dom.Text;
 
 // Credit: Starter code from Udacity ABND Pets App.
 
@@ -61,6 +67,7 @@ public class EditorActivity extends AppCompatActivity implements
         }
     };
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,6 +108,58 @@ public class EditorActivity extends AppCompatActivity implements
         mQuantityEditText.setOnTouchListener(mTouchListener);
         mSupplierNameEditText.setOnTouchListener(mTouchListener);
         mSupplierPhoneEditText.setOnTouchListener(mTouchListener);
+
+        // Respond when "minus" button is clicked to decrease quantity.
+        Button decreaseQuantityButton = findViewById(R.id.decrease_quantity);
+        decreaseQuantityButton.setOnClickListener(new OnClickListener() {
+            public void onClick(View view) {
+                int bookQuantity = 0;
+                String bookQuantityString = mQuantityEditText.getText().toString();
+                if (!TextUtils.isEmpty(bookQuantityString)) {
+                    bookQuantity = Integer.parseInt(bookQuantityString);
+                    // If quantity is greater than 0, then decrease by 1.
+                    if (bookQuantity > 0) {
+                        mBookHasChanged = true;
+                        bookQuantity = bookQuantity - 1;
+                        mQuantityEditText.setText(Integer.toString(bookQuantity));
+                    } else {
+                        // Otherwise set quantity to 0.
+                        mQuantityEditText.setText(Integer.toString(bookQuantity));
+                    }
+                }
+            }
+        });
+
+        // Respond when "plus" button is clicked to increase quantity.
+        Button increaseQuantityButton = findViewById(R.id.increase_quantity);
+        increaseQuantityButton.setOnClickListener(new OnClickListener() {
+            public void onClick(View view) {
+                mBookHasChanged = true;
+                int bookQuantity = 0;
+                String bookQuantityString = mQuantityEditText.getText().toString();
+                if (!TextUtils.isEmpty(bookQuantityString)) {
+                    bookQuantity = Integer.parseInt(bookQuantityString);
+                    bookQuantity = bookQuantity + 1;
+                    mQuantityEditText.setText(Integer.toString(bookQuantity));
+                } else if (mCurrentBookUri == null) {
+                    bookQuantity = bookQuantity + 1;
+                    mQuantityEditText.setText(Integer.toString(bookQuantity));
+                }
+            }
+        });
+
+        // Respond when "phone" button is pressed.
+        FloatingActionButton fabCall = findViewById(R.id.fab_call);
+        fabCall.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel",
+                        mSupplierPhoneEditText.getText().toString(), null));
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     // Get user input from editor and save book into database.
@@ -109,7 +168,6 @@ public class EditorActivity extends AppCompatActivity implements
         String titleString = mTitleEditText.getText().toString().trim();
         String priceString = mPriceEditText.getText().toString().trim();
         String quantityString = mQuantityEditText.getText().toString().trim();
-        int quantity = Integer.parseInt(quantityString);
         String supplierNameString = mSupplierNameEditText.getText().toString().trim();
         String supplierPhoneString = mSupplierPhoneEditText.getText().toString().trim();
 
@@ -127,10 +185,17 @@ public class EditorActivity extends AppCompatActivity implements
         // Create ContentValues object where column names are key and attributes from editor are values.
         ContentValues values = new ContentValues();
         values.put(BookEntry.COLUMN_BOOK_TITLE, titleString);
-        values.put(BookEntry.COLUMN_BOOK_PRICE, priceString);
         values.put(BookEntry.COLUMN_BOOK_QUANTITY, quantityString);
         values.put(BookEntry.COLUMN_BOOK_SUPPLIER_NAME, supplierNameString);
         values.put(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE, supplierPhoneString);
+
+        // For price, include default value of 0.00.
+        double priceDefault = 0.00;
+        if (!TextUtils.isEmpty(priceString)) {
+            values.put(BookEntry.COLUMN_BOOK_PRICE, priceString);
+        } else {
+            values.put(BookEntry.COLUMN_BOOK_PRICE, priceDefault);
+        }
 
         // Determine if this is a new or existing book by checking if mCurrentBookUri is null or not.
         if (mCurrentBookUri == null) {
@@ -162,7 +227,6 @@ public class EditorActivity extends AppCompatActivity implements
                 Toast.makeText(this, getString(R.string.editor_update_book_successful),
                         Toast.LENGTH_SHORT).show();
             }
-
         }
     }
 
@@ -386,6 +450,5 @@ public class EditorActivity extends AppCompatActivity implements
 
         // Close the activity.
         finish();
-
     }
 }
