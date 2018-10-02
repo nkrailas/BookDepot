@@ -179,7 +179,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:hint="@string/hint_supplier_phone"
-                android:backgroundTint="#3F51B5"
                 android:inputType="phone" />
 
         </LinearLayout>
