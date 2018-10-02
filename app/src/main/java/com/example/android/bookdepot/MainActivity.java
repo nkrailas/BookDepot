@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements
         ListView bookListView = findViewById(R.id.list);
 
         // Find and set empty view on the ListView, so that it only shows when the list has 0 items.
+        // Artwork: https://openclipart.org/detail/268482/library-bibliotheque-extra-contrast-book-
+        // titles-converted-to-paths
         View emptyView = findViewById(R.id.empty_view);
         bookListView.setEmptyView(emptyView);
 
