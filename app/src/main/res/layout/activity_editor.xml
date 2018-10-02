@@ -64,6 +64,7 @@
             <EditText
                 android:id="@+id/edit_book_price"
                 style="@style/EditTextStyle"
+                android:hint="@string/hint_book_price"
                 android:inputType="numberDecimal" />
 
         </RelativeLayout>
@@ -106,6 +107,7 @@
                 android:paddingRight="8dp"
                 android:text="0"
                 android:textColor="#000000"
+                android:inputType="number"
                 android:textSize="16sp" />
 
             <Button
@@ -159,12 +161,12 @@
             android:id="@+id/fab_call"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/fab_margin"
+            android:layout_marginRight="18dp"
             android:src="@drawable/ic_phone" />
 
         <!-- Input fields -->
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:orientation="vertical"
@@ -173,9 +175,11 @@
             <!-- Supplier Phone-->
             <EditText
                 android:id="@+id/edit_supplier_phone"
-                style="@style/EditTextStyle"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:hint="@string/hint_supplier_phone"
-                android:autoLink="phone"
+                android:backgroundTint="#3F51B5"
                 android:inputType="phone" />
 
         </LinearLayout>

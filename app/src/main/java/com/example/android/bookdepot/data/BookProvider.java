@@ -194,8 +194,6 @@ public class BookProvider extends ContentProvider {
             }
         }
 
-        // No need to check TODO
-
         // If there are no values to update, then don'try to update the database.
         if (values.size() == 0) {
             return 0;

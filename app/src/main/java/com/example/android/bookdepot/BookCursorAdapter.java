@@ -67,7 +67,7 @@ public class BookCursorAdapter extends CursorAdapter {
         TextView priceTextView = view.findViewById(R.id.price);
         int priceColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_PRICE);
         String bookPriceAmount = cursor.getString(priceColumnIndex);
-        String suggestedPrice = context.getString(R.string.suggested_price_label);
+        String suggestedPrice = context.getString(R.string.listview_price_label);
         String bookPrice = suggestedPrice + bookPriceAmount;
         priceTextView.setText(bookPrice);
 
@@ -115,7 +115,7 @@ public class BookCursorAdapter extends CursorAdapter {
             }
         });
 
-        String inStock = context.getString(R.string.quantity_label);
+        String inStock = context.getString(R.string.listview_quantity_label);
         String inStockValue = String.valueOf(bookData.getBookQuantity());
         String quantityInStock = inStock + " " + inStockValue;
         quantityTextView.setText(quantityInStock);

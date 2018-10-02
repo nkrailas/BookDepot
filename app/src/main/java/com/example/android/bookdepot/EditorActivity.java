@@ -26,7 +26,6 @@ import android.widget.Toast;
 
 import com.example.android.bookdepot.data.BookContract.BookEntry;
 
-import org.w3c.dom.Text;
 
 // Credit: Starter code from Udacity ABND Pets App.
 
@@ -94,12 +93,11 @@ public class EditorActivity extends AppCompatActivity implements
         }
 
         // Find all relevant views needed to read user input from.
-        mTitleEditText = (EditText) findViewById(R.id.edit_book_title);
+        mTitleEditText = findViewById(R.id.edit_book_title);
         mPriceEditText = findViewById(R.id.edit_book_price);
         mQuantityEditText = findViewById(R.id.edit_book_quantity);
         mSupplierNameEditText = findViewById(R.id.edit_supplier_name);
         mSupplierPhoneEditText = findViewById(R.id.edit_supplier_phone);
-
 
         // Set up OnTouchListeners on all input fields to determine if user has touched or modified them.
         // This will signal if there are unsaved changes or not, if user leaves the editor without saving.
@@ -159,7 +157,6 @@ public class EditorActivity extends AppCompatActivity implements
                 finish();
             }
         });
-
     }
 
     // Get user input from editor and save book into database.
@@ -172,20 +169,17 @@ public class EditorActivity extends AppCompatActivity implements
         String supplierPhoneString = mSupplierPhoneEditText.getText().toString().trim();
 
         // Check if this is supposed to be a new book and if all the fields in the editor are blank.
-        if (mCurrentBookUri == null &&
-                TextUtils.isEmpty(titleString) && TextUtils.isEmpty(priceString) &&
-                TextUtils.isEmpty(quantityString) && TextUtils.isEmpty(supplierNameString) &&
-                TextUtils.isEmpty(supplierPhoneString)) {
-
+        if (mCurrentBookUri == null && TextUtils.isEmpty(titleString)) {
+            Toast.makeText(this, getString(R.string.editor_required_field),
+                    Toast.LENGTH_LONG).show();
             // Since no fields were modified, return early without creating a new book.
-            // No need to create ContentValues or do any ContentProvider operations.
+            // No need to create ContentValues or do any ContentProvider operations
             return;
         }
 
         // Create ContentValues object where column names are key and attributes from editor are values.
         ContentValues values = new ContentValues();
         values.put(BookEntry.COLUMN_BOOK_TITLE, titleString);
-        values.put(BookEntry.COLUMN_BOOK_QUANTITY, quantityString);
         values.put(BookEntry.COLUMN_BOOK_SUPPLIER_NAME, supplierNameString);
         values.put(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE, supplierPhoneString);
 
@@ -195,6 +189,14 @@ public class EditorActivity extends AppCompatActivity implements
             values.put(BookEntry.COLUMN_BOOK_PRICE, priceString);
         } else {
             values.put(BookEntry.COLUMN_BOOK_PRICE, priceDefault);
+        }
+
+        // For quantity, include default value.
+        Integer quantityDefault = 0;
+        if (!TextUtils.isEmpty(quantityString)) {
+            values.put(BookEntry.COLUMN_BOOK_QUANTITY, quantityString);
+        } else {
+            values.put(BookEntry.COLUMN_BOOK_QUANTITY, quantityDefault);
         }
 
         // Determine if this is a new or existing book by checking if mCurrentBookUri is null or not.

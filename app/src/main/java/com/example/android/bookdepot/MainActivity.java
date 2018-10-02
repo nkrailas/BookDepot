@@ -97,9 +97,9 @@ public class MainActivity extends AppCompatActivity implements
         values.put(BookEntry.COLUMN_BOOK_SUPPLIER_NAME, "Powell's City of Books");
         values.put(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE, "800-878-7323");
 
-        // Insert a new row for Charlotte's Web into the provider using the ContentResolver.
+        // Insert a new row for dummy data into the provider using the ContentResolver.
         // Use the BookEntry Content URI to indicate inserting into the books database table.
-        // Receive the new content URI that will allow us to access Charlotte's Web data.
+        // Receive the new content URI that will allow us to access dummy data.
         Uri newUri = getContentResolver().insert(BookEntry.CONTENT_URI, values);
 
     }
