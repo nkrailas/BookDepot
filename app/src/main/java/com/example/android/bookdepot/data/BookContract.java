@@ -43,11 +43,11 @@ public final class BookContract {
         public static final String _ID = BaseColumns._ID;
 
         // Title, price, quantity, supplier name and supplier phone of a book.
-        public static final String COLUMN_BOOK_TITLE = "title";
-        public static final String COLUMN_BOOK_PRICE = "price";
-        public static final String COLUMN_BOOK_QUANTITY = "quantity";
-        public static final String COLUMN_BOOK_SUPPLIER_NAME = "supplier_name";
-        public static final String COLUMN_BOOK_SUPPLIER_PHONE = "supplier_phone";
+        public static final String COLUMN_BOOK_TITLE = "title";                     // Text.
+        public static final String COLUMN_BOOK_PRICE = "price";                     // Integer.
+        public static final String COLUMN_BOOK_QUANTITY = "quantity";               // Integer.
+        public static final String COLUMN_BOOK_SUPPLIER_NAME = "supplier_name";     // Text.
+        public static final String COLUMN_BOOK_SUPPLIER_PHONE = "supplier_phone";   // Integer.
 
     }
 }

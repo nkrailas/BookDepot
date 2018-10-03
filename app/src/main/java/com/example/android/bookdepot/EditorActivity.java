@@ -279,7 +279,7 @@ public class EditorActivity extends AppCompatActivity implements
         switch (item.getItemId()) {
             case R.id.action_save:              // Respond to click "Save" in menu option.
                 saveBook();                     // Save book to database.
-                if (mHasRequiredFields = true) {
+                if (mHasRequiredFields == true) {
                     finish();                       // Exit activity.
                 }
                 return true;
