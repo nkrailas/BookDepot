@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <!-- Margin around the floating action button in MainActivity -->
-    <dimen name="fab_margin">16dp</dimen>
 
     <!-- Common margin value used throughout the app -->
     <dimen name="activity_margin">16dp</dimen>
+
+    <!-- Margin around the floating action button in MainActivity -->
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Common layout_width for edit text fields in EditorActivity -->
+    <dimen name="edit_text">224dp</dimen>
+
 </resources>

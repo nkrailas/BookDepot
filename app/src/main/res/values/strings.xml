@@ -18,14 +18,15 @@
 
     <!-- Labels for headings and hints of attributes to type in EditText fields [CHAR LIMIT=30] -->
     <string name="heading_book">Title</string>
-    <string name="hint_book_title">Required Field</string>
+    <string name="hint_book_title">Name of Book</string>
     <string name="heading_price">Price ($)</string>
-    <string name="hint_book_price">USD</string>
+    <string name="hint_book_price">0.00</string>
     <string name="heading_quantity">Quantity</string>
     <string name="minus_sign">-</string>
     <string name="plus_sign">+</string>
     <string name="heading_supplier_name">Supplier </string>
     <string name="hint_supplier_name">Company Name</string>
+    <string name="call__supplier_button">CALL</string>
     <string name="hint_supplier_phone">Phone Number</string>
 
     <!-- Title for activity page [CHAR LIMIT=20] -->
@@ -33,7 +34,7 @@
     <string name="editor_activity_title_edit_book">Edit a Book</string>
 
     <!-- Toast messages for inserting EditText fields [CHAR LIMIT=NONE] -->
-    <string name="editor_required_field">Title required for all entries</string>
+    <string name="editor_required_field">All fields are required</string>
 
     <string name="editor_insert_book_successful">Book saved</string>
     <string name="editor_insert_book_failed">Error with saving book</string>

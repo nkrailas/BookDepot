@@ -3,11 +3,11 @@
 <!-- Credit: Starter code from Udacity ABND Pets App -->
 
 <!-- Layout for the EditorActivity -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="right"
     android:orientation="vertical"
     android:padding="@dimen/activity_margin"
     tools:context=".EditorActivity">
@@ -25,18 +25,20 @@
 
         <!-- Input fields -->
         <LinearLayout
-            android:layout_height="wrap_content"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:paddingLeft="4dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
 
             <!-- Title Field -->
             <EditText
                 android:id="@+id/edit_book_title"
-                android:inputType="textCapWords"
                 style="@style/EditTextStyle"
-                android:hint="@string/hint_book_title" />
+                android:layout_width="224dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_book_title"
+                android:inputType="textCapWords" />
 
         </LinearLayout>
 
@@ -54,20 +56,23 @@
             android:text="@string/heading_price" />
 
         <!-- Input fields -->
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:orientation="vertical"
             android:paddingLeft="4dp">
 
             <!-- Price Field -->
             <EditText
                 android:id="@+id/edit_book_price"
                 style="@style/EditTextStyle"
+                android:layout_width="224dp"
+                android:layout_height="wrap_content"
                 android:hint="@string/hint_book_price"
                 android:inputType="numberDecimal" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -103,11 +108,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:freezesText="true"
+                android:inputType="number"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:text="0"
                 android:textColor="#000000"
-                android:inputType="number"
                 android:textSize="16sp" />
 
             <Button
@@ -134,16 +139,18 @@
 
         <!-- Input fields -->
         <LinearLayout
-            android:layout_height="wrap_content"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:paddingLeft="4dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
 
             <!-- Supplier Name -->
             <EditText
                 android:id="@+id/edit_supplier_name"
                 style="@style/EditTextStyle"
+                android:layout_width="224dp"
+                android:layout_height="wrap_content"
                 android:hint="@string/hint_supplier_name"
                 android:inputType="textCapWords" />
 
@@ -157,32 +164,33 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab_call"
-            android:layout_width="wrap_content"
+        <!-- Label -->
+        <Button
+            android:id="@+id/call_supplier_button"
             android:layout_height="wrap_content"
-            android:layout_marginRight="18dp"
-            android:src="@drawable/ic_phone" />
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="CALL"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorAccent" />
 
         <!-- Input fields -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingLeft="4dp">
 
             <!-- Supplier Phone-->
             <EditText
                 android:id="@+id/edit_supplier_phone"
-                android:layout_width="175dp"
+                style="@style/EditTextStyle"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_width="224dp"
                 android:hint="@string/hint_supplier_phone"
                 android:inputType="phone" />
-
         </LinearLayout>
-
     </LinearLayout>
-
 </LinearLayout>
